@@ -1,0 +1,2 @@
+# SanjayaPharmacy
+HTML Individual Project
