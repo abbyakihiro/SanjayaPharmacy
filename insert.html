@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Sanjaya Pharmacy</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+    <div class="logo">
+        <img src="imgs/logo1.jpg" alt="" width="200px" height="150px">
+    </div>
+
+    
+    <div id="nav-bar">
+        <li class="liLeft"><a href="Home.html">Home</a></li>
+        <li class="liRight"><a href="insert.html">Register</a></li>
+        <li class="liRight"><a href="http://localhost/uasmember/login.php">Login</a></li>
+        <li class="liLeft"><a href="feedback.html">Feedback</a></li>
+        <li class="liLeft"><a href="rating.html">Rating</a></li>
+        <li class="liLeft"><a href="forum.html">Forum</a></li>  
+    </div> 
+    
+    <div id="company">
+    <form name="RegForm" onsubmit="return validateForm()" action="http://localhost/uasmember/storedata.php" method="post">
+        <div>
+        <label>Full Name : </label> <br>
+        <input type="text" name="Name" placeholder="Full Name" id="fuName" >
+        <span></span>
+        </div>
+
+        <div>
+        <label>Email : </label> <br>
+        <input type="email" name="Email2" placeholder="Email" id="email" > 
+        <span></span>
+        </div>
+
+        <div>
+        <label>Username : </label> <br>
+        <input type="text" name="uname" placeholder="Username" id="uname" > 
+        <span id="errorUsername"></span>
+        </div>
+
+        <div>
+        <label>Password : </label> <br>
+        <input type="password" name="password" placeholder="Password" id="pass" > 
+        <span></span>
+        </div>
+
+        <div>
+        <label>Gender : </label> <br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        </div>
+
+        <div>
+        <label>Tanggal Lahir : </label> <br>
+        <input type="date" id="birthday" name="birthday">
+        <span></span>
+        </div>
+
+        <br><br>
+
+        <input type="submit" name="submit" value="submit"  >
+        
+        
+        <!-- <button type="submit" value="insert" id="btn-submit">Submit</button> -->
+    </form>
+
+    <form action="http://localhost/uasmember/dataMember.php" method="">
+    
+        <!-- <input type="button" name="dataGet" value="Cek Data Member"> -->
+    </form>
+    
+    <br><br><br><br><br>
+    
+    <div id="footer">
+        <p id="desc">
+            Sanjaya Pharmacy &copy; 2019
+        </p>
+    </div>
+    <script>
+
+        function validateForm() { 
+            var name = document.forms["RegForm"]["Name"].value;
+            var email = document.forms["RegForm"]["Email2"].value;
+            var uname = document.forms["RegForm"]["uname"].value;
+            var password = document.forms["RegForm"]["password"].value;
+            var gender = document.forms["RegForm"]["gender"].value;
+            var birthday = document.forms["RegForm"]["birthday"].value;
+     
+            if (name == "") {
+            alert("Name must be filled out");
+            return false;
+            }else
+            if (email == "") {
+            alert("Email must be filled out");
+            return false;
+            }else
+            if (uname == "") {
+            alert("Username must be filled out");
+            return false;
+            }else
+            if (password == "") {
+            alert("Password must be filled out");
+            return false;
+            }else
+            if (gender == "") {
+            alert("Gender must be filled out");
+            return false;
+            }else
+            if (birthday ==""){
+            alert("Date of Birth Must be filled out");
+            return false;
+            }else{
+                window.confirm("Register Sukses! \n"+"Name: "+name +"\nEmail2: "+email + "\nuname: "+uname+"\ngender: "+gender);
+                //Passing Parameter ke PHP agar bisa di Store ke Database/Insert Database
+                return true;
+            }
+         }
+      </script> 
+</body>
+
+</html>
